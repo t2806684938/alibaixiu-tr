@@ -65,9 +65,10 @@ $('#modifyBox').on('submit','#modifyForm', function(){
     const id =$(this).attr('data-id');
     $.ajax({
         type:'put',
+        // url:'/users/'+id,
         url:`/users/${id}`,
         data: formData,
-        success:function(){
+        success:function(response){
             location.reload();
         }
     })
