@@ -51,7 +51,7 @@ $('#userBox').on('click','.edit',function(){
     $.ajax({
         type:'get',
         // url:'/users/'+id,
-        url:`/users/${{id}}`,
+        url:`/users/${id}`,
         success:function(response){
             console.log(response)
             const html = template('modifyTpl', response);
@@ -65,7 +65,7 @@ $('#modifyBox').on('submit','#modifyForm', function(){
     const id =$(this).attr('data-id');
     $.ajax({
         type:'put',
-        url:`/users/${{id}}`,
+        url:`/users/${id}`,
         data: formData,
         success:function(){
             location.reload();
